@@ -66,6 +66,26 @@ class addressBook{ // Address Book Class
             console.log();
         }
     }
+    findAndEdit(name,edited){ // function to find and edit Contact
+        for(let i of this.list){ //traversing over all Contacts
+            RegexException.checkDetails(edited.firstName,edited.lastName,edited.address,edited.city,edited.state,edited.zip,edited.phoneNumber,edited.email); //Validating New Details 
+            if((i.firstName+" "+i.lastName) == name){ // Comparing Full name of each Contact
+                
+                //Updating Values
+                i.firstName = edited.firstName
+                i.lastName = edited.lastName
+                i.address = edited.address
+                i.city = edited.city
+                i.state = edited.state
+                i.zip = edited.zip
+                i.phoneNumber = edited.phoneNumber
+                i.email = edited.email
+                console.log("Contact Edited\n"); //Acknowledgement of edit
+                return;
+            }
+        }
+        console.log("Contact Not Found\n"); // Contact Not Found Case Handling
+    }
 }
 
 try{
@@ -75,7 +95,7 @@ try{
     let contact1 = new Contact("Prakhar","Gupta","ldiuug hdfl hsdfl hsdhlhgd d","agra","Uttar Pradesh",282003,8218748718,"skdjfoise@gmail.com")
     let contact2 =new Contact("Karan","Gupta","ldiuug hdfl hsdflbkldnfknbdf hsdhlhgd d","agra","Uttar Pradesh",282001,8217748718,"dtsnskdjfoise@gmail.com")
     let contact3 = new Contact("Rahul","Kumar","ldiuug hdfl hsdfl hsdhlhgdlfiobnlfknbd d","agra","Uttar Pradesh",282004,8214748718,"skdtnertnerjfoise@gmail.com")
-    let contact4 = new Contact("Raj","Gupta","ldiuug hdfl hsdfl lkdfb;jdfbfhsdhlhgd ","agra","Uttar Pradesh",282005,8212222222718,"skdjfoisetrnrte@gmail.com")
+    let contact4 = new Contact("Raj","Gupta","ldiuug hdfl hsdfl lkdfb;jdfbfhsdhlhgd ","agra","Uttar Pradesh",282005,8212222718,"skdjfoisetrnrte@gmail.com")
     
     // Adding Contacts to address book
     book.addContact(contact1) 
@@ -84,6 +104,13 @@ try{
     book.addContact(contact4)
     
     // printing contact info
+    book.printAllContacts()
+    
+    let editedContact = new Contact("Saakar", "Talwar","jdgsgfsefsfheskef f hskf skf ","mathura","Uttar Pradesh",284005,7362426490,"abc@gmail.com");// Edited Contact details
+    book.findAndEdit("Saakar Talwar",editedContact); // Invalid Contact instance
+    book.findAndEdit("Raj Gupta",editedContact); // Valid edit instance
+    
+    // printing edited contact infos
     book.printAllContacts()
 }
 catch(e){
