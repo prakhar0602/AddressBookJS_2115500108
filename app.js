@@ -60,7 +60,7 @@ class addressBook{ // Address Book Class
             return;
         }
         this.list = [...this.list,x] // Adding Contact in Address Book
-        console.log("Contact Added");
+        console.log("Contact Added\n");
     }
     printAllContacts(){ // Displaying All Contact Information
         for(let i of this.list){
@@ -103,6 +103,35 @@ class addressBook{ // Address Book Class
         const length = this.list.reduce((size, num) => size + 1, 0); // Using reduce function
         console.log("Number of Contacts -> "+length+"\n");
     }
+
+    searchByCity(city){ // function to search Contacts by City
+        let contacts = this.list.filter(contact=>contact.city==city)
+        console.log("Following Contacts are in "+city);
+        for(let i of contacts){
+            console.log("Name -> " + i.firstName+" "+i.lastName);
+            console.log("Address ->" + i.address);
+            console.log("City ->" + i.city);
+            console.log("State ->" + i.state);
+            console.log("Zip ->" + i.zip);
+            console.log("Phone No. ->" + i.phoneNumber);
+            console.log("Email ->" + i.email);
+            console.log();
+        }
+    }
+    searchByState(state){ // function to search Contacts By State
+        let contacts = this.list.filter(contact=>contact.state==state)
+        console.log("Following Contacts are in "+state);
+        for(let i of contacts){
+            console.log("Name -> " + i.firstName+" "+i.lastName);
+            console.log("Address ->" + i.address);
+            console.log("City ->" + i.city);
+            console.log("State ->" + i.state);
+            console.log("Zip ->" + i.zip);
+            console.log("Phone No. ->" + i.phoneNumber);
+            console.log("Email ->" + i.email);
+            console.log();
+        }
+    }
 }
 
 try{
@@ -124,7 +153,7 @@ try{
     // printing contact info
     book.printAllContacts()
     
-    let editedContact = new Contact("Saakar", "Talwar","jdgsgfsefsfheskef f hskf skf ","mathura","Uttar Pradesh",284005,7362426490,"abc@gmail.com");// Edited Contact details
+    let editedContact = new Contact("Saakar", "Talwar","jdgsgfsefsfheskef f hskf skf ","Indore","Madhya Pradesh",284005,7362426490,"abc@gmail.com");// Edited Contact details
     book.findAndEdit("Saakar Talwar",editedContact); // Invalid Contact instance
     book.findAndEdit("Raj Gupta",editedContact); // Valid edit instance
     
@@ -137,6 +166,9 @@ try{
     book.numberOfContacts() // Calculating Number of Contacts
 
     book.addContact(contact5); // Adding Existing Contact instance
+    book.addContact(editedContact);
+    book.searchByCity("Indore"); // Searching By City
+    book.searchByState("Uttar Pradesh"); // Searching By State
 }
 catch(e){
     console.log(e);
