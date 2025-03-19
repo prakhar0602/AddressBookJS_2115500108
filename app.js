@@ -142,6 +142,10 @@ class addressBook{ // Address Book Class
         const length = contacts.reduce((size, num) => size + 1, 0); // Using reduce function
         console.log("Number of Contacts in "+state+"-> "+length);
     }
+
+    sortContacts(){// function to sort based on name
+        this.list = this.list.sort((a, b) => a.firstName.localeCompare(b.firstName));
+    }
 }
 
 try{
@@ -182,6 +186,9 @@ try{
 
     book.countByCity("Indore") //Count By City
     book.countByState("Uttar Pradesh") //Count By State
+
+    book.sortContacts() // Sorting Contacts By Name 
+    book.printAllContacts() // Displaying Sorted Address Book
 }
 catch(e){
     console.log(e);
