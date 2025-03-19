@@ -86,6 +86,10 @@ class addressBook{ // Address Book Class
         }
         console.log("Contact Not Found\n"); // Contact Not Found Case Handling
     }
+    findAndDelete(name){ // function to find and delete Contact
+            this.list = this.list.filter(i=>(i.firstName+" "+i.lastName) != name);
+        console.log("Contact Deleted\n");
+    }
 }
 
 try{
@@ -112,6 +116,9 @@ try{
     
     // printing edited contact infos
     book.printAllContacts()
+
+    book.findAndDelete("Saakar Talwar"); // Deleting Contact based on full name
+    book.printAllContacts() // Displaying all Contacts
 }
 catch(e){
     console.log(e);
