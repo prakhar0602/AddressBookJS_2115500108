@@ -11,3 +11,4 @@
 # [Prakhar Gupta] Added : Ability to View Contacts by City or State in UC9. 
 # [Prakhar Gupta] Added : Ability to Count Contacts by City or State in UC10. 
 # [Prakhar Gupta] Added : Ability to Sort Contacts by Name in UC11. 
+# [Prakhar Gupta] Added : Ability to Sort Contacts by City, State, Zip in UC12. 

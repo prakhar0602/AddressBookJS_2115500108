@@ -146,6 +146,15 @@ class addressBook{ // Address Book Class
     sortContacts(){// function to sort based on name
         this.list = this.list.sort((a, b) => a.firstName.localeCompare(b.firstName));
     }
+    sortContactsByState(){// function to sort based on state
+        this.list = this.list.sort((a, b) => a.state.localeCompare(b.state));
+    }
+    sortContactsByCity(){// function to sort based on city
+        this.list = this.list.sort((a, b) => a.city.localeCompare(b.city));
+    }
+    sortContactsByZip(){// function to sort based on zip
+        this.list = this.list.sort((a, b) => a.zip-b.zip);
+    }
 }
 
 try{
@@ -188,6 +197,15 @@ try{
     book.countByState("Uttar Pradesh") //Count By State
 
     book.sortContacts() // Sorting Contacts By Name 
+    book.printAllContacts() // Displaying Sorted Address Book
+
+    book.sortContactsByState() // Sorting Contacts By State 
+    book.printAllContacts() // Displaying Sorted Address Book
+    
+    book.sortContactsByCity() // Sorting Contacts By City
+    book.printAllContacts() // Displaying Sorted Address Book
+    
+    book.sortContactsByZip() // Sorting Contacts By Zip
     book.printAllContacts() // Displaying Sorted Address Book
 }
 catch(e){
