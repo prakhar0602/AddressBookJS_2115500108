@@ -52,7 +52,7 @@ class addressBook{ // Address Book Class
         this.list = [] //Initializing Empty List 
     }
     addContact(x){
-        this.list = [...this.list,x] // Adding Contact
+        this.list = [...this.list,x] // Adding Contact in Address Book
     }
     printAllContacts(){ // Displaying All Contact Information
         for(let i of this.list){
