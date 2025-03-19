@@ -5,3 +5,4 @@
 # [Prakhar Gupta] Added : Ability to store Contacts in Address Book in UC3.
 # [Prakhar Gupta] Added : Ability to find Contact using Name and Edit it in UC4. 
 # [Prakhar Gupta] Added : Ability to find Contact using Name and Delete it in UC5. 
+# [Prakhar Gupta] Added : Ability to calculate Number of Contacts in UC6. 

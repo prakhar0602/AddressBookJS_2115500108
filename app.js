@@ -90,6 +90,11 @@ class addressBook{ // Address Book Class
             this.list = this.list.filter(i=>(i.firstName+" "+i.lastName) != name);
         console.log("Contact Deleted\n");
     }
+
+    numberOfContacts(){ // Calculating No of Contacts
+        const length = this.list.reduce((size, num) => size + 1, 0); // Using reduce function
+        console.log("Number of Contacts -> "+length+"\n");
+    }
 }
 
 try{
@@ -119,6 +124,8 @@ try{
 
     book.findAndDelete("Saakar Talwar"); // Deleting Contact based on full name
     book.printAllContacts() // Displaying all Contacts
+
+    book.numberOfContacts() // Calculating Number of Contacts
 }
 catch(e){
     console.log(e);
