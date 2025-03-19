@@ -132,6 +132,16 @@ class addressBook{ // Address Book Class
             console.log();
         }
     }
+    countByCity(city){ // function to count Contacts by City
+        let contacts = this.list.filter(contact=>contact.city==city)
+        const length = contacts.reduce((size, num) => size + 1, 0); // Using reduce function
+        console.log("Number of Contacts in "+city+"-> "+length);
+    }
+    countByState(state){ // function to count Contacts By State
+        let contacts = this.list.filter(contact=>contact.state==state)
+        const length = contacts.reduce((size, num) => size + 1, 0); // Using reduce function
+        console.log("Number of Contacts in "+state+"-> "+length);
+    }
 }
 
 try{
@@ -169,6 +179,9 @@ try{
     book.addContact(editedContact);
     book.searchByCity("Indore"); // Searching By City
     book.searchByState("Uttar Pradesh"); // Searching By State
+
+    book.countByCity("Indore") //Count By City
+    book.countByState("Uttar Pradesh") //Count By State
 }
 catch(e){
     console.log(e);
