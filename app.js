@@ -52,7 +52,15 @@ class addressBook{ // Address Book Class
         this.list = [] //Initializing Empty List 
     }
     addContact(x){
+        
+        // For checking Duplicate we will be comparing both name and address of Contact
+        let existingContacts = this.list.filter((contact)=>(contact.firstName==x.firstName && contact.lastName==x.lastName && contact.address==x.address))
+        if(existingContacts.length>0){
+            console.log("Contact Already Exists");
+            return;
+        }
         this.list = [...this.list,x] // Adding Contact in Address Book
+        console.log("Contact Added");
     }
     printAllContacts(){ // Displaying All Contact Information
         for(let i of this.list){
@@ -105,6 +113,7 @@ try{
     let contact2 =new Contact("Karan","Gupta","ldiuug hdfl hsdflbkldnfknbdf hsdhlhgd d","agra","Uttar Pradesh",282001,8217748718,"dtsnskdjfoise@gmail.com")
     let contact3 = new Contact("Rahul","Kumar","ldiuug hdfl hsdfl hsdhlhgdlfiobnlfknbd d","agra","Uttar Pradesh",282004,8214748718,"skdtnertnerjfoise@gmail.com")
     let contact4 = new Contact("Raj","Gupta","ldiuug hdfl hsdfl lkdfb;jdfbfhsdhlhgd ","agra","Uttar Pradesh",282005,8212222718,"skdjfoisetrnrte@gmail.com")
+    let contact5 =new Contact("Karan","Gupta","ldiuug hdfl hsdflbkldnfknbdf hsdhlhgd d","agra","Uttar Pradesh",282001,8217748718,"dtsnskdjfoise@gmail.com")
     
     // Adding Contacts to address book
     book.addContact(contact1) 
@@ -126,6 +135,8 @@ try{
     book.printAllContacts() // Displaying all Contacts
 
     book.numberOfContacts() // Calculating Number of Contacts
+
+    book.addContact(contact5); // Adding Existing Contact instance
 }
 catch(e){
     console.log(e);

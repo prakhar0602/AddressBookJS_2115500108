@@ -6,3 +6,4 @@
 # [Prakhar Gupta] Added : Ability to find Contact using Name and Edit it in UC4. 
 # [Prakhar Gupta] Added : Ability to find Contact using Name and Delete it in UC5. 
 # [Prakhar Gupta] Added : Ability to calculate Number of Contacts in UC6. 
+# [Prakhar Gupta] Added : Ability to check already existing Contact before adding in UC7. 
